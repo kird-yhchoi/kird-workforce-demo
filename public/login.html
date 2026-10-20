@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>KIRD 업무분장 관리 - 로그인</title>
+  <style>
+  *{box-sizing:border-box}body{margin:0;min-height:100vh;background:#f1f5fa;font-family:system-ui,-apple-system,"Malgun Gothic",sans-serif;color:#172c48;display:grid;place-items:center;padding:26px}
+  .wrap{width:min(100%,450px)}.brand{display:flex;align-items:center;gap:12px;margin-bottom:25px}.logo{width:50px;height:50px;border-radius:14px;background:linear-gradient(150deg,#c3eeff,#77bfe8);color:#12314d;display:grid;place-items:center;font-size:25px;font-weight:900}
+  .brand-name{font-size:18px;font-weight:850;letter-spacing:-.7px}.brand-note{font-size:12px;color:#6f859a;margin-top:2px}
+  .panel{border:1px solid #e0e8f1;background:#fff;border-radius:18px;box-shadow:0 12px 35px #20375612;padding:36px 32px}
+  h1{font-size:23px;letter-spacing:-.7px;margin:0 0 10px}.lead{font-size:13px;color:#698198;line-height:1.8;margin:0 0 25px}
+  label{display:block;font-size:12px;font-weight:750;margin-bottom:8px}input{width:100%;padding:13px 14px;border:1px solid #cbd9e9;border-radius:9px;background:#fff;font:inherit;font-size:14px;outline:0}input:focus{border-color:#326ebd;box-shadow:0 0 0 3px #3d85cc1c}
+  .field{margin-bottom:20px}.login-button{width:100%;background:#225eaf;border:0;border-radius:10px;padding:14px;color:#fff;font:inherit;font-size:14px;font-weight:750;cursor:pointer}.login-button:hover{background:#194f9b}.login-button:disabled{opacity:.65;cursor:wait}
+  .error{display:none;margin:0 0 18px;padding:12px;border:1px solid #f1c3c3;background:#fff4f3;color:#a63131;border-radius:9px;font-size:12px;line-height:1.7}.error.visible{display:block}
+  .note{font-size:11px;color:#72869a;line-height:1.8;text-align:center;margin-top:21px}.bottom{font-size:11px;text-align:center;color:#8aa0b4;margin-top:22px}
+  @media(max-width:480px){.panel{padding:29px 22px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><div class="logo">K</div><div><div class="brand-name">KIRD 업무분장 관리</div><div class="brand-note">국가과학기술인력개발원</div></div></div>
+    <main class="panel">
+      <h1>계정 로그인</h1>
+      <p class="lead">등록된 관리자 또는 조회 전용 계정으로 로그인하세요.<br>승인되지 않은 사용자는 업무분장 자료를 조회할 수 없습니다.</p>
+      <form id="loginForm" autocomplete="on">
+        <div class="field"><label for="username">계정 ID</label><input id="username" name="username" maxlength="32" autocomplete="username" required autofocus></div>
+        <div class="field"><label for="password">비밀번호</label><input id="password" name="password" type="password" maxlength="256" autocomplete="current-password" required></div>
+        <div id="loginError" class="error" role="alert"></div>
+        <button class="login-button" type="submit">로그인</button>
+      </form>
+      <div class="note">조회 계정: 업무분장·조직도·과거 이력·PDF/JSON 열람<br>관리자 계정: 조회 및 직원정보·표시 순서 변경</div>
+    </main>
+    <div class="bottom">직원정보는 가상 구성 · 로그인 후 이용</div>
+  </div>
+  <script src="/login.js" defer></script>
+<p style="text-align:center;color:#234366;font-weight:bold;font-size:13px;margin:20px">※ 직원 성명·연락처·업무 배정 및 이력은 가상 정보입니다.</p>
+</body>
+</html>
